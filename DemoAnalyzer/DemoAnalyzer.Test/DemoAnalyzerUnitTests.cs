@@ -26,46 +26,58 @@ namespace DemoAnalyzer.Test
         public void TestMethod2()
         {
             var test = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+            using System;
+            using System.Linq;
+            using System.Collections.Generic;
 
-    namespace ConsoleApplication1
-    {
-        class TypeName
-        {   
-        }
-    }";
+            namespace FixingProject
+            {
+                public class Foo<Bar> where Bar : class
+                {
+                    public Bar CurrentBar { get; }
+
+                    public Foo(Bar bar) 
+                        => CurrentBar = bar ?? throw new ArgumentNullException(nameof(bar));
+
+                    private class SomeNestedClass
+                    {
+                        public int Bar { get; set; }
+                    }
+                }
+            }";
             var expected = new DiagnosticResult
             {
-                Id = "DemoAnalyzer",
-                Message = String.Format("Type name '{0}' contains lowercase letters", "TypeName"),
-                Severity = DiagnosticSeverity.Warning,
+                Id = "AV1709",
+                Message = $"Generic type name 'Bar' does not begin with the letter 'T'.",
+                Severity = DiagnosticSeverity.Error,
                 Locations =
                     new[] {
-                            new DiagnosticResultLocation("Test0.cs", 11, 15)
+                            new DiagnosticResultLocation("Test0.cs", 8, 34)
                         }
             };
 
             VerifyCSharpDiagnostic(test, expected);
 
             var fixtest = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+            using System;
+            using System.Linq;
+            using System.Collections.Generic;
 
-    namespace ConsoleApplication1
-    {
-        class TYPENAME
-        {   
-        }
-    }";
+            namespace FixingProject
+            {
+                public class Foo<TBar> where TBar : class
+                {
+                    public TBar CurrentBar { get; }
+
+                    public Foo(TBar bar) 
+                        => CurrentBar = bar ?? throw new ArgumentNullException(nameof(bar));
+
+                    private class SomeNestedClass
+                    {
+                        public int Bar { get; set; }
+                    }
+                }
+            }";
             VerifyCSharpFix(test, fixtest);
         }
 
