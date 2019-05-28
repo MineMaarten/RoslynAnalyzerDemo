@@ -38,7 +38,11 @@ namespace DemoAnalyzer
         {
             var typeParameter = (TypeParameterSyntax)context.Node;
 
-
+            //If the type parameter name starts with 'T', all is ok.
+            if (typeParameter.Identifier.ValueText.StartsWith("T", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
         }
 
         private static void AnalyzeSymbol(SymbolAnalysisContext context)
