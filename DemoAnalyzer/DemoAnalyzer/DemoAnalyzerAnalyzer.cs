@@ -36,6 +36,8 @@ namespace DemoAnalyzer
 
         private void AnalyzeTypeParameter(SyntaxNodeAnalysisContext context)
         {
+            var typeParameter = (TypeParameterSyntax)context.Node;
+
 
         }
 
