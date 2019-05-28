@@ -30,9 +30,13 @@ namespace DemoAnalyzer
 
         public override void Initialize(AnalysisContext context)
         {
-            // TODO: Consider registering other actions that act on syntax instead of or in addition to symbols
-            // See https://github.com/dotnet/roslyn/blob/master/docs/analyzers/Analyzer%20Actions%20Semantics.md for more information
-            context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
+            //Register a callback for when a TypeParameterSyntax is encountered when analyzing the source code.
+            context.RegisterSyntaxNodeAction(AnalyzeTypeParameter, SyntaxKind.TypeParameter);
+        }
+
+        private void AnalyzeTypeParameter(SyntaxNodeAnalysisContext context)
+        {
+
         }
 
         private static void AnalyzeSymbol(SymbolAnalysisContext context)
