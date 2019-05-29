@@ -18,18 +18,13 @@ namespace DemoAnalyzer
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(DemoAnalyzerCodeFixProvider)), Shared]
     public class DemoAnalyzerCodeFixProvider : CodeFixProvider
     {
-        private const string title = "Make uppercase";
+        private const string title = "Add T in front of the generic type name";
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds
-        {
-            get { return ImmutableArray.Create(DemoAnalyzerAnalyzer.DiagnosticId); }
-        }
+            => ImmutableArray.Create(DemoAnalyzerAnalyzer.DiagnosticId);
 
         public sealed override FixAllProvider GetFixAllProvider()
-        {
-            // See https://github.com/dotnet/roslyn/blob/master/docs/analyzers/FixAllProvider.md for more information on Fix All Providers
-            return WellKnownFixAllProviders.BatchFixer;
-        }
+            => WellKnownFixAllProviders.BatchFixer;
 
         public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
