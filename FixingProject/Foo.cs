@@ -13,7 +13,7 @@ namespace FixingProject
 
         private class SomeNestedClass
         {
-            public int Bar { get; set; }
+            public Int32 Bar { get; set; }
         }
     }
 }

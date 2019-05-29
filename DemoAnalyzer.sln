@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAnalyzer.Vsix", "DemoAn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixingProject", "FixingProject\FixingProject.csproj", "{446FCAE6-6064-4287-BED6-A5F335233724}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseTypeAliasesAnalyzer", "UseTypeAliasesAnalyzer\UseTypeAliasesAnalyzer\UseTypeAliasesAnalyzer.csproj", "{FC20CD19-0636-41CC-AF35-9CD175CEA635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseTypeAliasesAnalyzer.Test", "UseTypeAliasesAnalyzer\UseTypeAliasesAnalyzer.Test\UseTypeAliasesAnalyzer.Test.csproj", "{66642512-3353-4735-B1A4-788BBE04A524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseTypeAliasesAnalyzer.Vsix", "UseTypeAliasesAnalyzer\UseTypeAliasesAnalyzer.Vsix\UseTypeAliasesAnalyzer.Vsix.csproj", "{9E53C372-CB0C-4A4E-9C4F-5445355E723A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{446FCAE6-6064-4287-BED6-A5F335233724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{446FCAE6-6064-4287-BED6-A5F335233724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{446FCAE6-6064-4287-BED6-A5F335233724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC20CD19-0636-41CC-AF35-9CD175CEA635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC20CD19-0636-41CC-AF35-9CD175CEA635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC20CD19-0636-41CC-AF35-9CD175CEA635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC20CD19-0636-41CC-AF35-9CD175CEA635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66642512-3353-4735-B1A4-788BBE04A524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66642512-3353-4735-B1A4-788BBE04A524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66642512-3353-4735-B1A4-788BBE04A524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66642512-3353-4735-B1A4-788BBE04A524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E53C372-CB0C-4A4E-9C4F-5445355E723A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E53C372-CB0C-4A4E-9C4F-5445355E723A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E53C372-CB0C-4A4E-9C4F-5445355E723A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E53C372-CB0C-4A4E-9C4F-5445355E723A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
