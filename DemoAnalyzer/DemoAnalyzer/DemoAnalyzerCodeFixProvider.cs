@@ -47,6 +47,9 @@ namespace DemoAnalyzer
 
         private async Task<Solution> PrefixTAsync(Document document, TypeParameterSyntax declaration, CancellationToken cancellationToken)
         {
+            //We need to acquire the semantic model, to answer where the type parameter we would like to change is used. 
+            var semanticModel = await document.GetSemanticModelAsync(cancellationToken);
+
 
         }
 
