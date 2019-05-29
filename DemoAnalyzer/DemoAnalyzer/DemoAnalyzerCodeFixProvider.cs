@@ -53,6 +53,8 @@ namespace DemoAnalyzer
             //Get the symbol that belongs to the declaration syntax from the semantic model
             var typeSymbol = semanticModel.GetDeclaredSymbol(declaration, cancellationToken);
 
+            //The new type name becomes TType (e.g. Bar -> TBar)
+            var newName = "T" + declaration.Identifier.ValueText;
         }
 
         private async Task<Solution> MakeUppercaseAsync(Document document, TypeDeclarationSyntax typeDecl, CancellationToken cancellationToken)
