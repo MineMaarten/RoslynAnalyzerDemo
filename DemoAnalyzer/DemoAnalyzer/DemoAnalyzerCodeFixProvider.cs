@@ -40,9 +40,14 @@ namespace DemoAnalyzer
             context.RegisterCodeFix(
                 CodeAction.Create(
                     title: title,
-                    createChangedSolution: c => MakeUppercaseAsync(context.Document, declaration, c),
+                    createChangedSolution: c => PrefixTAsync(context.Document, declaration, c),
                     equivalenceKey: title),
                 diagnostic);
+        }
+
+        private async Task<Solution> PrefixTAsync(Document document, TypeParameterSyntax declaration, CancellationToken cancellationToken)
+        {
+
         }
 
         private async Task<Solution> MakeUppercaseAsync(Document document, TypeDeclarationSyntax typeDecl, CancellationToken cancellationToken)
