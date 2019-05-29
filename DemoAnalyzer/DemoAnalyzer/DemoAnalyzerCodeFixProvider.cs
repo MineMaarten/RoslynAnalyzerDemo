@@ -50,6 +50,8 @@ namespace DemoAnalyzer
             //We need to acquire the semantic model, to answer where the type parameter we would like to change is used. 
             var semanticModel = await document.GetSemanticModelAsync(cancellationToken);
 
+            //Get the symbol that belongs to the declaration syntax from the semantic model
+            var typeSymbol = semanticModel.GetDeclaredSymbol(declaration, cancellationToken);
 
         }
 
